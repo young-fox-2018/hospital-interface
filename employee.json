@@ -1,0 +1,30 @@
+[
+    {
+        "_name": "james",
+        "_position": "office boy",
+        "_username": "james123",
+        "_password": "123456",
+        "_status": false
+    },
+    {
+        "_name": "angga",
+        "_position": "admin",
+        "_username": "angga123",
+        "_password": "123456",
+        "_status": false
+    },
+    {
+        "_name": "budi",
+        "_position": "dokter",
+        "_username": "budi123",
+        "_password": "123456",
+        "_status": false
+    },
+    {
+        "_name": "khevin",
+        "_position": "admin",
+        "_username": "khevin123",
+        "_password": "123456",
+        "_status": false
+    }
+]
