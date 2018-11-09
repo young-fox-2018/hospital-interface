@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "hola",
+        "diagnosis": [
+            "stroke",
+            "darah tinggi"
+        ],
+        "doctors": [
+            "harley"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "hola",
+        "diagnosis": [
+            "stroke",
+            "darah tinggi"
+        ],
+        "doctors": [
+            "harley"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "ronny",
+        "diagnosis": [
+            "sakithati",
+            "sakitpala"
+        ],
+        "doctors": [
+            "jimmy"
+        ]
+    }
+]
