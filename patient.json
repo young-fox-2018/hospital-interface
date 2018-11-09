@@ -1,12 +1,9 @@
 [
   {
-    "id": "1",
-    "name": "daniel",
+    "id": 1,
+    "name": "anhar",
     "diagnosis": [
-      "batuk",
-      "flu",
-      "pilek",
-      "demam"
+      "batuk"
     ]
   }
 ]

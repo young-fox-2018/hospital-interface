@@ -8,9 +8,6 @@ class ControllerEmployee{
             if(err){
                 View.displayError(err)
             } else {
-                // null,`save data success ${JSON.stringify(obj)}. Total Employee: ${data.length}`
-                // data = `save data success ${JSON.stringify(data)}. Total Employee: ${data.length}`
-                // console.log("=====",data)
                 View.displayData(`save data success ${JSON.stringify(data[data.length-1])}. Total Employee: ${data.length}`)
             }
         })
@@ -22,8 +19,16 @@ class ControllerEmployee{
                 View.displayError(err)
             } else {
                 View.displayData(`user ${data.username} logged in succesfully`)
-                // if(data){
-                // }
+            }
+        })
+    }
+
+    static logout(name){
+        ModelEmployee.logout(name,function(err,data){
+            if(err){
+                View.displayError(err)
+            } else {
+                View.displayData(`Logout user ${data.username} berhasil`)
             }
         })
     }

@@ -94,6 +94,34 @@ class ModelEmployee {
         })
     }
 
+    static logout(name,cb){
+        this.readFile("./employee.json", function(err,data){
+            if(err){
+                cb({
+                    message: "error read file when logout",
+                    err: err
+                })
+            } else {
+                let index = data.findIndex((element) => element.username === name && element.login === true)
+                if(index === -1){
+                    cb("username salah, tidak bisa logout")
+                } else {
+                    data[index].login = false
+                    ModelEmployee.writeFile("./employee.json",JSON.stringify(data, null, 2),function(err){
+                        if(err){
+                            cb({
+                                message: "error write file when logout",
+                                err: err
+                            })
+                        } else {
+                            cb(null,data[index])
+                        }
+                    })
+                }
+            }
+        })
+    }
+
 }
 
 module.exports = ModelEmployee

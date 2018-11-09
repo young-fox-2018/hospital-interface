@@ -1,13 +1,13 @@
 ModelEmployee = require("./ModelEmployee.js")
 
 class ModelPatient {
-  constructor(id, name, diagnosis) {
-    this.id = id
+  constructor(name, diagnosis) {
+    this.id = 0
     this.name = name
     this.diagnosis = diagnosis
   }
 
-  static addPatient(id,name,diagnosis,cb){
+  static addPatient(name,diagnosis,cb){
     // console.log([id,name,diagnosis])
     ModelEmployee.readFile("./employee.json",function(err,data){
         if(err){
@@ -17,10 +17,13 @@ class ModelPatient {
         })
         } else {
           let dataPatient = []
+          let cekdokter = false
           for(let i = 0; i < data.length; i++){
             if(data[i].position == "dokter" && data[i].login == true){
-              dataPatient.push(new ModelPatient(id, name, diagnosis))
-
+              dataPatient.push(new ModelPatient(name, diagnosis))
+              dataPatient[dataPatient.length - 1].id = dataPatient.length
+              
+              cekdokter = true
               ModelEmployee.writeFile("./patient.json",JSON.stringify(dataPatient, null, 2),function(err){
                 if(err){
                     cb({
@@ -33,6 +36,11 @@ class ModelPatient {
             })
             }
           }
+
+          if(!cekdokter){
+            cb("Tidak memiliki akses untuk add patient!")
+          }
+
         }
     })
   }
