@@ -71,8 +71,6 @@ class Employee {
   }
 
 
-
-
   static addEmployee(input, cb){
     Employee.readFile(function(err, data){
       if(err) {
@@ -80,31 +78,41 @@ class Employee {
       }
       else{
         let newData = data
-        let newEmployee = new Employee(input[0],input[2],input[0],input[1])
-        newData.push(newEmployee)
-        
-        Employee.saveFile(newData, function(err){
-
-          if(err){
-            cb(err)
+        let isHired = false
+        for(let i in newData){
+          if(newData[i]["name"] === input[0]){
+            isHired = true
+            cb(`${newData[i]["name"]} sudah menjadi karyawan!`)
           }
-          else{
-            Employee.readFile(function(err, data){
+        }
 
-              if(err){
-                let obj = {
-                  Message: "Errornya di readfile addEmployee",
-                  detail: err
+        if(!isHired){
+          let newEmployee = new Employee(input[0],input[2],input[0],input[1])
+          newData.push(newEmployee)
+          
+          Employee.saveFile(newData, function(err){
+
+            if(err){
+              cb(err)
+            }
+            else{
+              Employee.readFile(function(err, data){
+
+                if(err){
+                  let obj = {
+                    Message: "Errornya di readfile addEmployee",
+                    detail: err
+                  }
+                  cb(obj)
                 }
-                cb(obj)
-              }
-              else{
-                cb(null, data)
-              }
+                else{
+                  cb(null, data)
+                }
 
-            })
-          }
-        })
+              })
+            }
+          })
+        }
       }
     })
     
@@ -177,6 +185,7 @@ class Employee {
             isDoctor = true
           }
         }
+
         if(isDoctor){
           Employee.readPatient(function(err, data){
             if(err){
@@ -184,8 +193,8 @@ class Employee {
             }
             else{
               let newData = data
-              let diagnosis = input.slice(2)
-              let newPatient= new Patient(newData.length+1,input[1],diagnosis)
+              let diagnosis = input.slice(1)
+              let newPatient= new Patient(newData.length+1,input[0],diagnosis)
               newData.push(newPatient)
     
               Employee.savePatient(newData, function(err){
@@ -206,6 +215,29 @@ class Employee {
     })
   }
 
+  static listPatients(cb){
+    Employee.readFile(function(err, data){
+      if(err){
+        cb(err)
+      }
+      else{
+        for(let i in data){
+          if(data[i]["loggedIn"] === true && data[i]["position"] === "dokter"){
+            Employee.readPatient(function(err,data){
+              if(err){
+                cb(err)
+              }
+              else{
+                cb(null, data)
+              }
+            })
+          }
+        }
+      }
+    })
+  }
+
+
   static logout(cb){
     Employee.readFile(function(err, data){
       if(err){
@@ -213,27 +245,35 @@ class Employee {
       }
       else{
         let checkData = data
+        let allOut = true
 
         for(let i in checkData){
           if(checkData[i]["loggedIn"] === true){
             checkData[i]["loggedIn"] = false
+            allOut = false
           }
         }
-        Employee.saveFile(checkData,function(err){
-          if (err){
-            let obj = {
-              Message: "Errornya di logout",
-              details: err
+
+        if(!allOut){
+          Employee.saveFile(checkData,function(err){
+            if (err){
+              let obj = {
+                Message: "Errornya di logout",
+                details: err
+              }
+              cb(obj)
             }
-            cb(obj)
-          }
-          else{
-            let obj = {
-              Message: `user logout berhasil`
+            else{
+              let obj = {
+                Message: `user logout berhasil`
+              }
+              cb(null,obj)
             }
-            cb(null,obj)
-          }
-        })
+          })
+        }
+        else{
+          cb(`Tidak ada user yang logged in`)
+        }
       }
     })
   }

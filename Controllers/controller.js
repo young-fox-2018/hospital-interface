@@ -45,6 +45,26 @@ class Controller{
                     }
                 })
                 break;
+            case "listPatients":
+                Employee.listPatients(function(err, data){
+                    if(err){
+                        View.displayError(err)
+                    }
+                    else{
+                        View.display(data)
+                    }
+                })
+                break;
+            case "listEmployees":
+                Employee.readFile(function(err, data){
+                    if(err){
+                        View.displayError(err)
+                    }
+                    else{
+                        View.display(data)
+                    }
+                })
+                break;
             default: View.help()
                 break;
         }

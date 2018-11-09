@@ -32,5 +32,25 @@
       "bingung",
       "pusing"
     ]
+  },
+  {
+    "id": 5,
+    "name": "Robert",
+    "diagnosis": []
+  },
+  {
+    "id": 6,
+    "name": "Januar",
+    "diagnosis": [
+      "stress",
+      "insomnia"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Abed",
+    "diagnosis": [
+      "linglung"
+    ]
   }
 ]

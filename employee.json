@@ -12,5 +12,12 @@
     "username": "angga",
     "password": "54321",
     "loggedIn": false
+  },
+  {
+    "name": "Arnold",
+    "position": "dokter",
+    "username": "Arnold",
+    "password": "999888",
+    "loggedIn": false
   }
 ]
