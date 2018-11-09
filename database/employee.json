@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "username": "susanto",
+        "password": "123",
+        "status": false,
+        "role": "recepcionist"
+    },
+    {
+        "id": 2,
+        "username": "faisal",
+        "password": "345",
+        "status": false,
+        "role": "dokter"
+    },
+    {
+        "id": 3,
+        "username": "fauzan",
+        "password": "454",
+        "status": false,
+        "role": "admin"
+    },
+    {
+        "id": 4,
+        "username": "khevin",
+        "password": "3434",
+        "status": false,
+        "role": "dokter"
+    },
+    {
+        "id": 5,
+        "username": "susanto",
+        "password": "343",
+        "status": false,
+        "role": "office boy"
+    },
+    {
+        "id": 6,
+        "username": "susanto",
+        "password": "787",
+        "status": false,
+        "role": "recepcionist"
+    },
+    {
+        "id": 7,
+        "username": "faris",
+        "password": "454",
+        "status": false,
+        "role": "dokter"
+    },
+    {
+        "id": 8,
+        "username": "indah",
+        "password": "787",
+        "status": false,
+        "role": "dokter"
+    },
+    {
+        "id": 9,
+        "username": "dimas",
+        "password": "999",
+        "status": false,
+        "role": "dokter"
+    }
+]

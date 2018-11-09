@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "heri",
+        "diagnosa": "sakithati"
+    },
+    {
+        "id": 2,
+        "name": "dzikri",
+        "diagnosa": "kantongkering"
+    },
+    {
+        "id": 3,
+        "name": "sulistio",
+        "diagnosa": "mala rindu"
+    },
+    {
+        "id": 4,
+        "name": "khevin",
+        "diagnosa": "batuk pilek flu"
+    },
+    {
+        "id": 5,
+        "name": "dimas",
+        "diagnosa": "batuk pilek flu"
+    }
+]
