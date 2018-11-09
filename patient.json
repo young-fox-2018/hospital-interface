@@ -1,7 +1,21 @@
 [
   {
     "id": 1,
-    "name": "anhar",
+    "name": "b",
+    "diagnosis": [
+      "batuk"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "a",
+    "diagnosis": [
+      "batuk"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "c",
     "diagnosis": [
       "batuk"
     ]
