@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Herkules",
+    "diagnosis": [
+      "pegel",
+      "pegel"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "roger",
+    "diagnosis": [
+      "masuk",
+      "angin"
+    ]
+  }
+]
