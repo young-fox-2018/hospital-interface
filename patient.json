@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "b",
+    "diagnosis": [
+      "batuk"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "a",
+    "diagnosis": [
+      "batuk"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "c",
+    "diagnosis": [
+      "batuk"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "abcd",
+    "diagnosis": [
+      "batuk",
+      "panas",
+      "pilek"
+    ]
+  }
+]

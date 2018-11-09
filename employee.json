@@ -1,0 +1,26 @@
+[
+  {
+    "username": "anhar",
+    "password": "12345",
+    "position": "admin",
+    "login": false
+  },
+  {
+    "username": "amir",
+    "password": "12345",
+    "position": "admin",
+    "login": false
+  },
+  {
+    "username": "fathoni",
+    "password": "54321",
+    "position": "dokter",
+    "login": true
+  },
+  {
+    "name": "aaf",
+    "position": "123",
+    "username": "dokter",
+    "login": false
+  }
+]
