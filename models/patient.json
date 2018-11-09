@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Daniel",
+    "diagnosis": [
+      "batuk",
+      "flu",
+      "pilek",
+      "demam"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Daniel",
+    "diagnosis": [
+      "batuk",
+      "flu",
+      "pilek",
+      "demam"
+    ]
+  }
+]

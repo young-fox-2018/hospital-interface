@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "budi",
+    "password": "123456",
+    "position": "dokter",
+    "isLogin": false
+  },
+  {
+    "id": 2,
+    "username": "rangga",
+    "password": "12345678",
+    "position": "admin",
+    "isLogin": false
+  }
+]
