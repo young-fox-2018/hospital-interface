@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "joe",
+    "diagnosis": "sakit perut"
+  },
+  {
+    "id": "2",
+    "name": "song",
+    "diagnosis": "sakit otak"
+  },
+  {
+    "id": "2",
+    "name": "noni",
+    "diagnosis": "sakit kuku"
+  }
+]
