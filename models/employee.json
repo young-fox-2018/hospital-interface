@@ -1,0 +1,23 @@
+[
+  {
+    "name": "abed",
+    "position": "admin",
+    "username": "abed",
+    "password": "iniaja",
+    "login": false
+  },
+  {
+    "name": "wika",
+    "position": "admin",
+    "username": "baru",
+    "password": "iniaja",
+    "login": false
+  },
+  {
+    "name": "anhar",
+    "position": "dokter",
+    "username": "anhar",
+    "password": "inijuga",
+    "login": false
+  }
+]
