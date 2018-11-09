@@ -25,20 +25,24 @@ class Employee {
       if (err) {
         cb(err)
       } else {
-        for (let i = 0; i < data.length; i++) {
-          if (data[i].username === employee.username) {
-              data[i][field] = value
-              break
-          }          
-        }
-
-        Employee.writeFile(file , JSON.stringify(data , null , 2), err => {
-          if (err) {
-            cb(err)
-          } else {
-            cb(null)
+        if (employee != null) {
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].username === employee.username) {
+                data[i][field] = value
+                break
+            }          
           }
-        })    
+      
+          Employee.writeFile(file , JSON.stringify(data , null , 2), err => {
+            if (err) {
+              cb(err)
+            } else {
+              cb(null)
+            }
+          }) 
+        } else {
+          cb('There is not any user that log in')
+        }    
       }
     })
   }
@@ -127,6 +131,7 @@ class Employee {
                   cb('User with that username already exist')
                 } else {
                   result.push(employee)
+
                   Employee.writeFile(file, JSON.stringify(result, null, 2), (err) => {
                     if (err) {
                       cb(err)
@@ -146,7 +151,23 @@ class Employee {
 
         }
       })
+  }
+
+  static logOut(cb) {
+    Employee.findOne(file, null, 'loggedIn', true, (err, result) => {
+      if (err) {
+        cb(err)
+      } else {
+          Employee.update(file, result, 'loggedIn', false, err => {
+            if (err) {
+              cb('There is not any user that log in')
+            } else {
+              cb(null, result)
+            }  
+          })
+        } 
+      })
     }
-}
+  }
 
 module.exports = Employee

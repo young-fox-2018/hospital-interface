@@ -4,8 +4,8 @@ const patienFile = '/Users/hacktiv8/Desktop/robert/robert/hospital-interface/pat
 const fs = require('fs')
 
 class Patient {
-    constructor(id, name, diagnosis) {
-      this.id = id
+    constructor(name, diagnosis) {
+      this.id = 0
       this.name = name
       this.diagnosis = diagnosis
     }
@@ -38,7 +38,14 @@ class Patient {
           if (err) {
             cb(err)
           } else {
-            const newData = new Patient(patient.id, patient.name, patient.diagnosis)
+            const newData = new Patient(patient.name, patient.diagnosis)
+
+            if (data.length == 0) {
+              newData.id = 1
+            } else {
+              newData.id = data.length + 1
+            }
+
             data.push(newData)
 
             Patient.writeFile(patienFile, JSON.stringify(data, null , 2), err => {

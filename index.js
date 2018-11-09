@@ -27,18 +27,23 @@ function inputHospitalCommand() {
             let diseases = ''
 
             for (let i = 3; i < argv.length; i++) {
-                diseases += argv[i] + ' '
+                diseases += argv[2] + ' '
             }
             
             diseases = diseases.trim()
 
             obj = {
-                id: argv[1],
-                name : argv[2],
+                name : argv[1],
+               
                 diagnosis : diseases
             }
+
+            console.log(obj)
                 
             Controller.addPatient(obj)
+        break
+        case 'logout' :
+            Controller.logOut()
     }            
 }
 

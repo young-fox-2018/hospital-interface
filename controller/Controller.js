@@ -42,6 +42,16 @@ class Controller {
             }
         })
     }
+
+    static logOut() {
+        Employee.logOut(err=> {
+            if (err) {
+                View.printError(err)
+            } else {
+                View.printData(`User berhasil log out`)
+            }
+        })
+    }
 }
 
 module.exports = Controller
