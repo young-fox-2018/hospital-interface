@@ -77,29 +77,21 @@ class Employee {
   static logout(info,cb){
     let username = info[0]
     let pass = info[1]
+    let index = 0
 
     Model.getData(pathEmploy, function(err , data) {
       if(err){
         cb(err)
       } else {
-        let loginTotal = 0 
         let index = 0
-        for (let i = 0; i < data.length; i++) {
-          if(data[i].login == true){
-            loginTotal++
-          }
-        }
-
         for (let j = 0; j < data.length; j++) {
-          if (data[j].username === username && data[j].password === pass && loginTotal === 0){
-            data[j].login = true
+          if (data[j].username === username && data[j].password === pass && data[j].login === true){
+            data[j].login = false
             index = j  
           }
         }
-        // logintotal 0 dan password dan username sama dan 
-        if (loginTotal !== 0 ) {
-          cb('Sudah ada yang login!')
-        } else if(data[index].username !== username || data[index].password !== pass ){
+
+        if(data[index].username !== username || data[index].password !== pass ){
           cb('Password / username salah!')
         } else {
           Model.saveData(pathEmploy , data , function(err) {
@@ -110,8 +102,6 @@ class Employee {
             }
           })
         }
-       
-      
       }
     })
   }

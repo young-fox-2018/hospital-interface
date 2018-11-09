@@ -6,6 +6,7 @@ const info = process.argv.slice(3)
 switch (command) {
   case 'register': Controller.register(info) ; break;
   case 'login' : Controller.login(info) ; break;
+  case 'logout' : Controller.logout(info) ; break;
   case 'addPatient' : Controller.addPatient(info) ; break;
   default: console.log(`COMMAND INVALID`) ; break;
 }

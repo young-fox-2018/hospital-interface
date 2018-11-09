@@ -14,6 +14,11 @@ class View {
     console.log(`user ${data.username} looged in succesfully`)
   }
 
+  static logout(data) {
+
+    console.log(`user ${data.username} looged out succesfully`)
+  }
+
   static addPatient(data) {
     console.log(`Data pasien berhasil ditambahkan. \nTotal data pasien: ${data.length}`)
   }
