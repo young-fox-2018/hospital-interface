@@ -1,0 +1,16 @@
+[
+    {
+        "name": "yonezu",
+        "position": "admin",
+        "username": "kenshiYonezu",
+        "password": "orion",
+        "loginStatus": false
+    },
+    {
+        "name": "amazarashi",
+        "position": "doctor",
+        "username": "amazarashi",
+        "password": "philosophy",
+        "loginStatus": false
+    }
+]
