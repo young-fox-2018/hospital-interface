@@ -20,14 +20,17 @@
     "id": 3,
     "name": "Arnold",
     "diagnosis": [
-      "stress"
+      "gila"
     ]
   },
   {
     "id": 4,
     "name": "Arnold",
     "diagnosis": [
-      "gila"
+      "gila",
+      "stress",
+      "bingung",
+      "pusing"
     ]
   }
 ]

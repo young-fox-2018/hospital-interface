@@ -206,8 +206,36 @@ class Employee {
     })
   }
 
-  static logout(){
-    
+  static logout(cb){
+    Employee.readFile(function(err, data){
+      if(err){
+        cb(err)
+      }
+      else{
+        let checkData = data
+
+        for(let i in checkData){
+          if(checkData[i]["loggedIn"] === true){
+            checkData[i]["loggedIn"] = false
+          }
+        }
+        Employee.saveFile(checkData,function(err){
+          if (err){
+            let obj = {
+              Message: "Errornya di logout",
+              details: err
+            }
+            cb(obj)
+          }
+          else{
+            let obj = {
+              Message: `user logout berhasil`
+            }
+            cb(null,obj)
+          }
+        })
+      }
+    })
   }
 
 }

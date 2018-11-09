@@ -35,6 +35,16 @@ class Controller{
                     }
                 })
                 break;
+            case "logout":
+                Employee.logout(function(err, data){
+                    if(err){
+                        View.displayError(err)
+                    }
+                    else{
+                        View.display(data)
+                    }
+                })
+                break;
             default: View.help()
                 break;
         }
