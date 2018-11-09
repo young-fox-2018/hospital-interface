@@ -1,0 +1,27 @@
+[
+  {
+    "name": "budi",
+    "username": "budiRampage",
+    "position": "dokter",
+    "password": "12345"
+  },
+  {
+    "name": "hana",
+    "username": "HanaTestu",
+    "position": "dokter",
+    "password": "54321"
+  },
+  {
+    "name": "maitreya",
+    "username": "papermintace",
+    "position": "dokter",
+    "password": "34567"
+  },
+  {
+    "name": "lilac",
+    "username": "uwuwu",
+    "position": "45678",
+    "password": "nurse",
+    "login": false
+  }
+]
