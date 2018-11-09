@@ -3,5 +3,15 @@
         "_id": 1,
         "_name": "andi",
         "_diagnosis": "batuk"
+    },
+    {
+        "_id": 2,
+        "_name": "nita",
+        "_diagnosis": "batuk pilek"
+    },
+    {
+        "_id": 3,
+        "_name": "lisa",
+        "_diagnosis": "batuk pilek flu"
     }
 ]

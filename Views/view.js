@@ -8,7 +8,7 @@ class View {
     }
     static showRegisterPatient(input, access) {
         if (access) {
-            console.log(`Save Data ${input[input.length - 1].name} Success. Total employee: ${input.length}`)
+            console.log(`Save Data ${input[input.length - 1].name} Success. Total Patient: ${input.length}`)
         } else {
             console.log(`access denied, only doctor can access this feature!`)
         }

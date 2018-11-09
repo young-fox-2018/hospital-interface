@@ -10,7 +10,7 @@ switch (argv[2]) {
         EmployeeController.login(argv[3], argv[4])
         break;
     case 'addPatient':
-        PatientController.addPatient(argv[3], argv[4])
+        PatientController.addPatient(argv[3], argv.slice(2).slice(2).join(' '))
         break;
     case 'logout':
         EmployeeController.logout(argv[3])
