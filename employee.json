@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "username": "budi",
+    "password": "123456",
+    "role": "dokter",
+    "isLoggedIn": false
+  },
+  {
+    "id": 2,
+    "username": "kevin",
+    "password": "mantapgan",
+    "role": "dokter",
+    "isLoggedIn": false
+  },
+  {
+    "id": 3,
+    "username": "Jokowi",
+    "password": "bisabos",
+    "role": "dokter",
+    "isLoggedIn": false
+  },
+  {
+    "id": 4,
+    "username": "Jon",
+    "password": "2222222",
+    "role": "officeBoy",
+    "isLoggedIn": false
+  }
+]
