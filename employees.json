@@ -1,0 +1,38 @@
+[
+    {
+        "username": "melinda123",
+        "password": "melinda123",
+        "role": "admin",
+        "logged": false
+    },
+    {
+        "username": "ujang123",
+        "password": "ujang123",
+        "role": "officeboy",
+        "logged": false
+    },
+    {
+        "username": "anita123",
+        "password": "anita123",
+        "role": "receptionist",
+        "logged": false
+    },
+    {
+        "username": "tommy123",
+        "password": "tommy123",
+        "role": "dokter",
+        "logged": false
+    },
+    {
+        "username": "budi",
+        "password": "123456",
+        "role": "dokter",
+        "logged": true
+    },
+    {
+        "username": "angga",
+        "password": "54321",
+        "role": "admin",
+        "logged": false
+    }
+]

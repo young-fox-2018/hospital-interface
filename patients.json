@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "michael",
+        "diagnosa": []
+    },
+    {
+        "id": 2,
+        "name": "indah",
+        "diagnosa": []
+    },
+    {
+        "id": 3,
+        "name": "butet",
+        "diagnosa": []
+    },
+    {
+        "id": 4,
+        "name": "daniel",
+        "diagnosa": [
+            "batuk",
+            "flu"
+        ]
+    }
+]
