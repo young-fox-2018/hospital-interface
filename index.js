@@ -22,6 +22,12 @@ switch (command) {
         Controller.addPatient({"id" : option[0], "name" : option[1], "diagnosis" : option.slice(2).join(" ")})
         break;
 
+    case "logout":
+        Controller.logout()
+        break;
+
+
+
     default:
         break;
 }

@@ -15,7 +15,7 @@ class Controller{
     }
 
     static register(curData){
-        Model.register(curData.username, curData.password, curData.role , function(err, data){
+        Model.register(curData , function(err, data){
             if(err){
                 View.displayError(err);
             }
@@ -32,6 +32,17 @@ class Controller{
             }
             else{
                 View.display(`user ${curData.username} logged in successfully`)
+            }
+        })
+    }
+
+    static logout(){
+        Model.logout(function(err){
+            if(err){
+                View.displayError(err)
+            }
+            else{
+                View.display(`You successfully logged out`)
             }
         })
     }

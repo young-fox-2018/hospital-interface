@@ -1,8 +1,10 @@
 class Employee {
-    constructor( position, username, password) {
-      this.position = position
+    constructor(id, position, username, password) {
+      this.id = id;
       this.username = username
       this.password = password
+      this.role = position
+      this.isLoggedIn = false
     }
   }
 

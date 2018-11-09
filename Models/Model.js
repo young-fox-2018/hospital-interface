@@ -29,7 +29,7 @@ class Model {
     })
   }
 
-  static register(username, password, role, callback){
+  static register(newEmployee, callback){
     Model.readFile(function(err, data){
       if(err){
         callback(err)
@@ -43,7 +43,9 @@ class Model {
           id = newData[newData.length-1]["id"]+1
         }
 
-        newData.push({"id": id ,"username" : username, "password" : password, "role": role, "isLoggedin": false});
+        let curEmployee = new Employee(id, newEmployee.role, newEmployee.username, newEmployee.password);
+        newData.push(curEmployee)
+
         newData = JSON.stringify(newData, null, 2)
         Model.writeFile(newData, function(err){
           if(err){
@@ -93,6 +95,42 @@ class Model {
     })
   }
 
+  static logout(callback){
+    Model.readFile(function(err, data){
+      if(err){
+        callback(err)
+      }
+      else{
+        let accountList = JSON.parse(data)
+        let loggedIn = false;
+
+        for(let i = 0; i < accountList.length; i++){
+          if(accountList[i].isLoggedIn == true){
+            loggedIn = true;
+            accountList[i].isLoggedIn = false;
+          }
+        }
+
+        accountList = JSON.stringify(accountList, null, 2)
+
+        if(loggedIn == true){
+          Model.writeFile(accountList, function(err){
+            if(err){
+              callback(err);
+            }
+            else{
+              callback(null);
+            }
+          })
+        }
+        else{
+          callback("{Message : There is no account currently logged in}")
+        }
+
+      }
+    })
+  }
+
   static readPatientsFile(callback){
     fs.readFile(patientsFileAddress, "utf-8", function(err, data){
       if(err){
@@ -115,30 +153,57 @@ class Model {
     })
   }
 
-  static addPatient(newPatient,callback){
-    
+
+  static checkLogin(role,callback){
+
     Model.readFile(function(err,data){
       if(err){
         callback(err)
       }
       else{
         let employeesData = JSON.parse(data);
-        let doctorLoggedIn = false
+        let loggedIn = false
         
         for(let i = 0 ; i < employeesData.length; i++){
-          if(employeesData[i].isLoggedin === true && employeesData[i].role === "dokter"){
-            doctorLoggedIn = true;
+          if(role == undefined){
+            if(employeesData[i].isLoggedIn === true){
+              loggedIn = true;
+            }
+          }
+          else{
+            if(employeesData[i].isLoggedin === true && employeesData[i].role === role){
+              loggedIn = true;
+            }
           }
         }
 
-        if(doctorLoggedIn){
+        callback(null, loggedIn)
+      }
+    })
+  }
+
+  static addPatient(newPatient,callback){
+    Model.checkLogin("dokter",function(err,loggedIn){
+      if(err){
+        callback(err)
+      }
+      else{
+
+        if(loggedIn){
           Model.readPatientsFile(function(err, data){
             if(err){
               callback(err);
             }
             else{
-              let curPatient = new Patient(newPatient.id, newPatient.name, newPatient.diagnosis)
               let newData = JSON.parse(data);
+              console.log(newData)
+              let id 
+              if(newData.length === 0){
+                id = 1;
+              }else{
+                id = newData[newData.length-1]["id"]+1
+              }
+              let curPatient = new Patient(id, newPatient.name, newPatient.diagnosis)
       
               newData.push(curPatient)
       
@@ -158,30 +223,10 @@ class Model {
         else{
           callback("{you don't have access to add patient}")
         }
+
       }
     })
-
-    
   }
-
-  // static checkLogin(role){
-
-  //   Model.readFile(function(err,data){
-  //     if(err){
-  //       callback(err)
-  //     }
-  //     else{
-  //       let employeesData = JSON.parse(data);
-  //       let doctorLoggedIn = false
-        
-  //       for(let i = 0 ; i < employeesData.length; i++){
-  //         if(employeesData[i].isLoggedin === true && employeesData[i].role === "dokter"){
-  //           doctorLoggedIn = true;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 
 }
 
