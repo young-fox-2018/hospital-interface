@@ -12,6 +12,7 @@ const diagnosis = argv.slice(2)
 
 const ControllerPatient = require("./Controller/ControllerPatient.js")
 const ControllerEmployee = require("./Controller/ControllerEmployee.js")
+const ControllerDefault = require("./Controller/ControllerDefault.js")
 
 switch (command) {
     case "register":
@@ -26,6 +27,10 @@ switch (command) {
     case "addPatient":
         ControllerPatient.addPatient(namePatient, diagnosis)
         break;
+    case "help":
+        ControllerDefault.help()
+        break;
     default:
+        ControllerDefault.help()
         break;
 }

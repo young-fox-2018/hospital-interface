@@ -1,9 +1,9 @@
 const View = require("../Views/View.js")
 const ModelEmployee = require("../Models/ModelEmployee.js")
 
-class ControllerEmployee{
+class ControllerEmployee {
 
-    static register(name,password,position){
+    static register(name, password, position) {
         ModelEmployee.register(name,password,position,function(err,data){
             if(err){
                 View.displayError(err)

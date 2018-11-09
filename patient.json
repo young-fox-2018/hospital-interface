@@ -19,5 +19,14 @@
     "diagnosis": [
       "batuk"
     ]
+  },
+  {
+    "id": 4,
+    "name": "abcd",
+    "diagnosis": [
+      "batuk",
+      "panas",
+      "pilek"
+    ]
   }
 ]
