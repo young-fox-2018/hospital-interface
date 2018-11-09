@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "name": "dory",
+    "position": "dokter",
+    "username": "dory",
+    "password": "1234",
+    "login": true
+  },
+  {
+    "id": 1,
+    "name": "budi",
+    "position": "tukang parkir",
+    "username": "budi",
+    "password": "123456",
+    "login": false
+  },
+  {
+    "id": 2,
+    "name": "faishal",
+    "position": "dokter",
+    "username": "faishal",
+    "password": "123",
+    "login": false
+  },
+  {
+    "id": 3,
+    "name": "john",
+    "position": "security",
+    "username": "john",
+    "password": "123",
+    "login": false
+  }
+]
