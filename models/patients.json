@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Daniel",
+    "doctor": "budi",
+    "diagnosis": [
+      "batuk",
+      "flu",
+      "pilek",
+      "demam"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Agung",
+    "doctor": "budi",
+    "diagnosis": [
+      "patah hati",
+      "luka dalam"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "redo",
+    "doctor": "rifa",
+    "diagnosis": [
+      "kepala pusing",
+      "muntah-muntah",
+      "diare"
+    ]
+  }
+]
