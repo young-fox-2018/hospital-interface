@@ -123,8 +123,8 @@ class Employee {
           if (result[i].isLogin == true) {
             result[i].isLogin = false
           }
-          
         }
+        cb("Logout berhasil")
         Employee.writeFile(result)
       }
     })

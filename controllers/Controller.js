@@ -43,7 +43,7 @@ class Controller {
                     Patient.addPatient2(id, nama, gejala, function (err, data) {
                         
                         if (err) {
-                            View.execute('DATA ERROR')
+                            View.execute(err)
                         } else {
                             
                             View.execute(data)

@@ -6,7 +6,6 @@ class Patient {
     this.diagnosis = diagnosis
   }
   static readFile(cb) {
-    
     fs.readFile('./DB/Patient.json', 'utf8', function (err, data) {
       
       if (err) {
@@ -26,10 +25,16 @@ class Patient {
       if (err) {
         cb(err)
       } else {
-        let dataResult = new Patient(data.length, name, gejala)
+        let dataResult = null
+        if (data.length == 0) {
+          dataResult = new Patient(1, name, gejala)
+        } else {
+          dataResult = new Patient(data.length+1, name, gejala)
+        }
+        
         let result = dataResult
         data.push(result)
-        console.log(`save data success ${JSON.stringify(data[data.length - 1])}`)
+        cb(`data pasien berhasil ditambahkan. Total data pasien : ${data.length}`)
         Patient.writeFile(data)
       }
     })
