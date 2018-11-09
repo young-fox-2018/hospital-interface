@@ -22,6 +22,16 @@ class Controller {
         })
     }
 
+    static logout(input) {
+        EmployeeModel.logout(input, function(err, data) {
+            if(err) {
+                View.logoutErr(err)
+            } else {
+                View.logoutSuccess(data)
+            }
+        })
+    }
+
     static addPatient(input) {
         EmployeeModel.addPatient(input, function(err, data) {
             if(err) {

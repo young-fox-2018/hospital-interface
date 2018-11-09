@@ -4,13 +4,27 @@
         "position": "dokter",
         "username": "mamatoke",
         "password": "1234",
-        "isLogin": false
+        "isLogin": true
     },
     {
         "name": "tole",
         "position": "officeboy",
         "username": "toletjakep",
         "password": "4321",
+        "isLogin": false
+    },
+    {
+        "name": "patrick",
+        "position": "perawat",
+        "username": "noitspatrick",
+        "password": "6666",
+        "isLogin": false
+    },
+    {
+        "name": "joker",
+        "position": "satpam",
+        "username": "jokertampan",
+        "password": "6969",
         "isLogin": false
     }
 ]

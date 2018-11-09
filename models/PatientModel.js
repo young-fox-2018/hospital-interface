@@ -4,8 +4,6 @@ class Patient {
       this.name = name
       this.diagnosis = diagnosis
     }
-
-
 }
 
 module.exports = Patient

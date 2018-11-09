@@ -16,11 +16,18 @@ class View {
 
     static addPatienterr(err){
         console.log(err);
-        
     }
 
     static addPatientSuccess(){
         console.log('data patient berhasil di update')
+    }
+
+    static logoutErr(err) {
+        console.log(err);
+    }
+
+    static logoutSuccess() {
+        console.log('user berhasil logout');
     }
 }
 
