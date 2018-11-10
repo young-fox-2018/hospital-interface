@@ -15,13 +15,13 @@ switch (command) {
     case "register":
         controller.register(name, username, password, position)
         break;
-    case "findall":
+    case "findAll":
         controller.findAll()
     break; 
     case "login" : 
         controller.login(username, password)
     break; 
-    default:
+    default: "How can we help you?"
         break;
 }
 

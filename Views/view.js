@@ -7,6 +7,10 @@ class Views {
     static displayLogin(input){
         console.log(input)
     }
+
+    static displayFindAll(input) {
+        console.log(input)
+    }
 }
 
 module.exports = Views

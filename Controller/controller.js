@@ -19,7 +19,7 @@ class Hospital {
             if(err){
                 console.log(err)
             } else {
-                console.log(data)
+                View.displayFindAll(data)
             }
         })
     }
