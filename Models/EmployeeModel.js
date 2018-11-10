@@ -39,17 +39,26 @@ class Employee {
         cb(err)
       }
       else {
-        let addNewData = new Employee(name, username, password, position)
         let newData = JSON.parse(data)
-        newData.push(addNewData)
-        Employee.writeFile(dataPath, JSON.stringify(newData), function(err, data) {
-          if (err) {
-            cb(err)
+        let usernamecheck = true
+        for (var i = 0; i < newData.length; i++) {
+          if (newData[i].username === username) {
+            usernamecheck = false
+            cb(null, `username sudah terpakai, harap ganti yang lain`)
           }
-          else {
-            cb(null, newData)
-          }
-        })
+        }
+        if (usernamecheck === true) {
+          let addNewData = new Employee(name, username, password, position)
+          newData.push(addNewData)
+          Employee.writeFile(dataPath, JSON.stringify(newData), function(err, data) {
+            if (err) {
+              cb(err)
+            }
+            else {
+              cb(null, newData)
+            }
+          })
+        }
       }
     })
   }
@@ -83,14 +92,14 @@ class Employee {
             }
           }
           else {
-            cb(null, "Gagal")
+            cb(null, `masih ada user yang login`)
           }
         })
       }
     })
   }
 
-  static addPatient(patient_id, patient_name, patient_diagnosis, cb) {
+  static addPatient(patient_name, patient_diagnosis, cb) {
     Employee.readFile(dataPath, function(err, data) {
       if (err) {
         cb(err)
@@ -108,7 +117,7 @@ class Employee {
               }
               else {
                 let dataPatient = JSON.parse(data)
-                dataPatient.push(new Patient(patient_id, patient_name, patient_diagnosis))
+                dataPatient.push(new Patient(dataPatient[dataPatient.length-1].id+1, patient_name, patient_diagnosis))
                 Patient.writeFile(dataPatientPath, JSON.stringify(dataPatient), function(err, data) {
                   if (err) {
                     cb(err)
@@ -121,6 +130,31 @@ class Employee {
             })
           }
         }
+        if (check === false) {
+          cb(null, `silahkan login sebagai dokter untuk menambah pasien`)
+        }
+      }
+    })
+  }
+
+  static logout(cb) {
+    Employee.readFile(dataPath, function(err, data) {
+      if (err) {
+        cb(err)
+      }
+      else {
+        let newData = JSON.parse(data)
+        for (var i = 0; i < newData.length; i++) {
+          newData[i].login = false
+        }
+        Employee.writeFile(dataPath, JSON.stringify(newData), function(err, data) {
+          if (err) {
+            cb(err)
+          }
+          else {
+            cb(null)
+          }
+        })
       }
     })
   }

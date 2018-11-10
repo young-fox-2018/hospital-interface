@@ -18,12 +18,15 @@ switch (argv[0]) {
     break;
 
   case "addPatient":
-    let patient_id = argv[1]
-    let patient_name = argv[2]
-    let patient_diagnosis = argv.slice(3)
-    Controller.addPatient(patient_id, patient_name, patient_diagnosis)
+    let patient_name = argv[1]
+    let patient_diagnosis = argv.slice(2)
+    Controller.addPatient(patient_name, patient_diagnosis)
     break;
 
+  case "logout":
+    Controller.logout()
+    break;
+    
   default:
 
 }

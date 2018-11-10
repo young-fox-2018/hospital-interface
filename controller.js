@@ -5,7 +5,7 @@ const View = require('./view.js')
 class Controller {
   static register(name, username, password, position) {
     if (name === undefined || username === undefined || password === undefined || position === undefined) {
-      View.viewData('Isian belum lengkap')
+      View.viewData('isian belum lengkap, harap isi dengan format <name> <username> <password> <position>')
     }
     else {
       let data = Employee.register(name, username, password, position, function(err, data) {
@@ -30,13 +30,24 @@ class Controller {
     })
   }
 
-  static addPatient(patient_id, patient_name, patient_diagnosis) {
-    Employee.addPatient(patient_id, patient_name, patient_diagnosis, function(err, data) {
+  static addPatient(patient_name, patient_diagnosis) {
+    Employee.addPatient(patient_name, patient_diagnosis, function(err, data) {
       if (err) {
         View.viewData(err)
       }
       else {
         View.viewDataAddPatient(data)
+      }
+    })
+  }
+
+  static logout() {
+    Employee.logout(function(err, data) {
+      if (err) {
+        View.viewData(err)
+      }
+      else {
+        View.viewData(`akun telah logout`)
       }
     })
   }
