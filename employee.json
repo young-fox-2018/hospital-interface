@@ -1,0 +1,23 @@
+[
+  {
+    "name": "budi",
+    "username": "rampageMonster",
+    "position": "dokter",
+    "password": "34567",
+    "login": false
+  },
+  {
+    "name": "maitreya",
+    "username": "papermintace",
+    "position": "dokter",
+    "password": "98865",
+    "login": true
+  },
+  {
+    "name": "ahri",
+    "username": "kdaAhri",
+    "position": "nurse",
+    "password": "34567",
+    "login": false
+  }
+]
