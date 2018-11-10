@@ -1,0 +1,23 @@
+[
+    {
+        "_id": 1,
+        "_username": "angga",
+        "_password": "54321",
+        "_role": "admin",
+        "_isLogin": false
+    },
+    {
+        "_id": 2,
+        "_username": "budi",
+        "_password": "123456",
+        "_role": "dokter",
+        "_isLogin": true
+    },
+    {
+        "_id": 3,
+        "_username": "sendy",
+        "_password": "123",
+        "_role": "jongos",
+        "_isLogin": false
+    }
+]

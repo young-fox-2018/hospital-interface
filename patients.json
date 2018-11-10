@@ -1,0 +1,12 @@
+[
+    {
+        "_id": 1,
+        "_name": "jamal",
+        "_diagnosis": "batuk, pilek, demam"
+    },
+    {
+        "_id": 2,
+        "_name": "yudi",
+        "_diagnosis": "ambeyen, sesek napas"
+    }
+]
