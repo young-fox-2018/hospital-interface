@@ -15,21 +15,33 @@ class EmployeeController {
     }
 
     static login(username, password) {
-        Employee.login(username, password, function(err, data){
+        Employee.login(username, password, function(err, data, isLoginAccount){
             if(err) {
                 EmployeeView.displayLoginError()
             } else {
-                if (data === null) {
-                    EmployeeView.displayError(404)
+                if (data !== null) {
+                    EmployeeView.displayError(data,isLoginAccount)
                 }else {
                     EmployeeView.displayLoginSuccess(username)
                 }
             }
         })
     }
+
+    static logout() {
+        Employee.logout(function(err, data){
+            if(err) {
+                EmployeeView.displayError()
+            } else if(data === null){
+                EmployeeView.displayError(402)
+            } else{
+                EmployeeView.displayLogoutSuccess(data)
+            }
+        })
+    }
     
-    static addPatient(id, nama, sakit) {
-        Employee.addPatient(id, nama, sakit, function(err, data) {
+    static addPatient(nama, sakit) {
+        Employee.addPatient(nama, sakit, function(err, data) {
             if(err) {
                 EmployeeView.displayError(err)
             }else {
@@ -45,6 +57,9 @@ class EmployeeController {
 
     }
 
+    static help() {
+        EmployeeView.help()
+    }
 }
 
 module.exports = EmployeeController

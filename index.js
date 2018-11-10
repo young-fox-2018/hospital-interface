@@ -22,7 +22,10 @@ switch (argv[0]) {
     case 'addPatient':
         ControllerEmployee.addPatient(id_patient, nama_patient, sakit_patient)
         break;
+    case 'logout' :
+        ControllerEmployee.logout()
+        break;
     default:
-        console.log('Command not found')
+        ControllerEmployee.help()
         break;
 }

@@ -55,17 +55,45 @@ class Employee {
             if(err){
                 callback(err)
             } else{
-                let index = data.findIndex((element) => element.username === username && element.password === password)
-                // console.log(index)
-                if ( index === -1 ) {
-                   callback(null, null) 
-                } else {
-                    data[index].login = true
+                var index = data.findIndex((element) => element.login === true)
+                if(index !== -1) {
+                    // console.log(data[index])
+                    callback(null, 403, data[index])
+                } else{
+                    var index = data.findIndex((element) => element.username === username && element.password === password)
+                    if ( index === -1 ) {
+                       callback(null, 404) 
+                    } else {
+                        data[index].login = true
+                        Employee.writeFile(file_path, JSON.stringify(data, null, 2), function(err){
+                            if(err){
+                                callback(err)
+                            } else{
+                                callback(null, null)
+                            }
+                        })
+                    }
+                }
+            }
+        })
+    }
+
+    static logout(callback){
+        Employee.readFile(file_path, function(err, data){
+            if(err){
+                callback(err)
+            } else{
+                var index = data.findIndex((element) => element.login === true)
+                if(index === -1) {
+                    // console.log(data[index])
+                    callback(null, null)
+                } else{
+                    data[index].login = false
                     Employee.writeFile(file_path, JSON.stringify(data, null, 2), function(err){
                         if(err){
                             callback(err)
                         } else{
-                            callback(null)
+                            callback(null, data[index])
                         }
                     })
                 }
@@ -73,7 +101,7 @@ class Employee {
         })
     }
 
-    static addPatient(id, nama, sakit, callback) {
+    static addPatient(nama, sakit, callback) {
         Employee.readFile(file_path, function(err, data){
             if(err){
                 callback(err)
@@ -91,7 +119,8 @@ class Employee {
                             }else{
                                 // console.log((dataPatient))
                                 dataPatient = JSON.parse(dataPatient)
-                                let newPatient = new Patient(id, nama, sakit)
+                                let new_id = dataPatient.length + 1
+                                let newPatient = new Patient(new_id, nama, sakit)
                                 console.log(newPatient)
                                 // dataPatient.push(newPatient)
                                dataPatient.push(newPatient)
