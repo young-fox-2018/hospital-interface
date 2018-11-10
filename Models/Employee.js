@@ -278,6 +278,51 @@ class Employee {
     })
   }
 
+  static filter(input, cb){
+    // console.log(input)
+    if(input.length <= 0){
+      cb("Please insert the diagnosis/diagnoses you want to filter!")
+    }
+    else{
+      Employee.readPatient(function(err,data){
+        if(err){
+          cb(err)
+        }
+        else{
+          //Using forEach to check the tags in each patient diagnoses
+
+          //should I add if isError()? biar bisa keluar error messagenya?
+         
+          let filtered = []
+         data.forEach(function(dataPatient){
+          //  console.log(dataPatient["diagnosis"])
+           dataPatient["diagnosis"].forEach(function(diagnosisList){
+            input.forEach(function(filterTag){
+              if(diagnosisList === filterTag){
+                filtered.push(dataPatient)
+              }
+            }) 
+           })
+          })
+
+          // filter() to remove duplicates && indexOf to find out the duplicates
+          // console.log(filtered.indexOf("Arnold"), "++++++++++++++++++++++++")
+          
+
+          //Kalau dibaca, aku mau tanya ini dong ka, logic-nya ku jadi belibet sendiri hahahahah
+          let unique = filtered.filter((patient,iFiltered,comparisonArray) => comparisonArray.indexOf(patient) === iFiltered)
+          if(unique.length <= 0){
+            cb(`No one have that diagnosis!`)
+          }
+          else{
+            cb(null, unique) 
+          }
+        }
+      })
+    }
+
+  }
+
 }
 
 module.exports = Employee

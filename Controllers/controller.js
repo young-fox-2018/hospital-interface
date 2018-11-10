@@ -65,6 +65,16 @@ class Controller{
                     }
                 })
                 break;
+            case "filter":
+                Employee.filter(input, function(err, data){
+                    if(err){
+                        View.displayError(err)
+                    }
+                    else{
+                        View.display(data)
+                    }
+                })
+                break;
             default: View.help()
                 break;
         }
