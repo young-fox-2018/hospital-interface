@@ -1,15 +1,19 @@
 
 
 class Views {
-    static display(input) {
-        console.log(input)
+    static display(data) {
+        console.log(data)
     }
     static displayLogin(input){
-        console.log(input)
+        console.log(`user ${input.name} logged in successfully`)
     }
 
-    static displayFindAll(input) {
-        console.log(input)
+    static displayFindAll(inputData) {
+        console.log(inputData)
+    }
+
+    static displayPatient(patientData) {
+        console.log(`${patientData}`)
     }
 }
 

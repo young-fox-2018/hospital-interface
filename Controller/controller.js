@@ -4,10 +4,10 @@ const Employee = require("../Models/Employee.js");
 const View = require("../Views/view");
 
 class Hospital {
-    static register(name, position, username, password) {
+    static register(name, username, position, password) {
         Employee.register(name, position, username, password,function(err, data){
-            if(err){
-                console.log(err)
+            if(err) {
+                View.display(err)
             } else {
                 View.display(`Save data success! Total employee: ${data.length}`)
             }
@@ -17,7 +17,7 @@ class Hospital {
     static findAll() {
         Employee.findAll(function(err,data){
             if(err){
-                console.log(err)
+                View.displayFindAll(err)
             } else {
                 View.displayFindAll(data)
             }
@@ -27,9 +27,18 @@ class Hospital {
     static login(username, password) {
         Employee.login(username, password, function(err, data){
             if(err) {
-                console.log(err)
+                View.displayLogin(err)
             } else {
                 View.displayLogin(data)
+            }
+        })
+    }
+    static addPatient(id, name, diagnosis) {
+        Patient.addPatient(id, name, diagnosis, function(err, data){
+            if(err){
+                View.displayPatient(err)
+            } else {
+                View.displayPatient(data)
             }
         })
     }

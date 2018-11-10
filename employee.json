@@ -1,27 +1,23 @@
 [
   {
     "name": "budi",
-    "username": "budiRampage",
+    "username": "rampageMonster",
     "position": "dokter",
-    "password": "12345"
-  },
-  {
-    "name": "hana",
-    "username": "HanaTestu",
-    "position": "dokter",
-    "password": "54321"
+    "password": "34567",
+    "login": false
   },
   {
     "name": "maitreya",
     "username": "papermintace",
     "position": "dokter",
-    "password": "34567"
+    "password": "98865",
+    "login": true
   },
   {
-    "name": "lilac",
-    "username": "uwuwu",
-    "position": "45678",
-    "password": "nurse",
+    "name": "ahri",
+    "username": "kdaAhri",
+    "position": "nurse",
+    "password": "34567",
     "login": false
   }
 ]
