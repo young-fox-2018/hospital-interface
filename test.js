@@ -1,2 +1,11 @@
-let arr = [1,2]
 
+
+
+
+
+
+
+
+
+const MY_MIND = true
+change(MY_MIND)

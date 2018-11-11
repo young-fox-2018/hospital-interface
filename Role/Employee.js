@@ -4,8 +4,8 @@ class Employee {
     this.name = name
     this.position = position
     this.username = username
-    this.password = password
     this.isLogin = false
+    this.password = password
   }
   static readFile(cb) {
     fs.readFile('./DB/Employee.json', 'utf8', function (err, data) {
@@ -31,7 +31,7 @@ class Employee {
           let dataResult = new Employee(name, role, name, password)
           let result = dataResult
           data.push(result)
-          console.log(`save data success ${JSON.stringify(data[data.length-1])}`)
+          console.log(`save data success ${JSON.stringify(data[data.length - 1])}`)
           Employee.writeFile(data)
 
         } else {
@@ -39,31 +39,31 @@ class Employee {
             if (data[i].username == name) {
               console.clear()
               console.log("USERNAME UDAH ADA");
-            } 
+            }
           }
           if (check == false) {
             console.clear()
-              console.log(`save data success ${JSON.stringify(data[i])}`)
-              let dataResult = new Employee(name, role, name, password)
-              let result = dataResult
-              data.push(result)
-              Employee.writeFile(data)
-              
+            let dataResult = new Employee(name, role, name, password)
+            console.log(`save data success ${JSON.stringify(data[data.length-1])}`)
+            let result = dataResult
+            data.push(result)
+            Employee.writeFile(data)
+
           }
         }
       }
     })
   }
-  static loginEmployee(username, password, cb){
-    this.readFile(function(err, data) {
+  static loginEmployee(username, password, cb) {
+    this.readFile(function (err, data) {
       let loginCheck = false
       let counter = 0
       let check = false
-      
+
       if (err) {
         console.log("DATA ERROR");
       } else {
-        
+
         data.forEach(element => {
           if (element.isLogin == true) {
             loginCheck = true
@@ -76,23 +76,23 @@ class Employee {
           data.forEach(element => {
             if (element.username == username && element.password == password) {
               data[counter].isLogin = true
-              cb(err, `user ${data[counter].name} logged in succesfully`)    
+              cb(err, `user ${data[counter].name} logged in succesfully`)
               check = true
               Employee.writeFile(data)
             }
             counter++
           });
           if (check == false) {
-            cb(err, "Tidak berhasil login")  
+            cb(err, "Tidak berhasil login")
           }
         }
       }
     })
   }
 
-  static addPatient(id, name, gejala, cb){
+  static addPatient(id, name, gejala, cb) {
     let LOGIN_CODE = 1
-    this.readFile(function(err, data) {
+    this.readFile(function (err, data) {
       if (err) {
         cb(err)
       } else {
@@ -113,8 +113,8 @@ class Employee {
       }
     })
   }
-  static logoutEmployee(id,cb){
-    this.readFile(function(err, data) {
+  static logoutEmployee(id, cb) {
+    this.readFile(function (err, data) {
       if (err) {
         cb(err)
       } else {
