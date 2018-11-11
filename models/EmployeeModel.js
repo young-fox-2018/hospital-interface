@@ -1,8 +1,6 @@
 const fs = require('fs')
 const Patient = require('/Users/admin/Documents/Phase 1/Week 2/hospital-interface/models/PatientModel.js')
 
-// const Controller = require('../controllers/Controller.js')
-
 class Employee {
     constructor(name, position, username, password) {
       this.name = name
@@ -26,39 +24,11 @@ class Employee {
       })
     }
 
-    static readPatientFile(callback) {
-      fs.readFile('./models/patient.json', 'utf8', function(err, data){
-        if(err) {
-          let obj = {
-            message : 'error read File pasien',
-            details : err
-          }
-          callback(obj)
-        } else {
-          callback(null, data)
-        }
-      })
-    }
-
     static writeFile(data, callback) {
       fs.writeFile('./models/employee.json', JSON.stringify(data, null, 4), function(err){
         if(err) {
           let obj = {
             message : 'error writeFile',
-            details : err
-          }
-          callback(obj)
-        } else {
-          callback(null)
-        }
-      })
-    }
-
-    static writePatientFile(data, callback) {
-      fs.writeFile('./models/patient.json', JSON.stringify(data, null, 4), function(err){
-        if(err) {
-          let obj = {
-            message : 'error write File pasien',
             details : err
           }
           callback(obj)
@@ -80,7 +50,7 @@ class Employee {
             if(err) {
               callback(err)
             } else {
-              callback(null)
+              callback(null, newEmployee, newData.length)
             }
           })
         }
@@ -129,7 +99,7 @@ class Employee {
                 if(err) {
                   callback (err)
                 } else {
-                  callback (null)
+                  callback (null, newData[tempIndex].name)
                 }
               })
             }
@@ -160,44 +130,6 @@ class Employee {
           })
         }
       })
-    }
-
-    static addPatient (input, callback) {
-       Employee.readFile(function(err, data) {
-         if(err) {
-           callback(err)
-         } else {
-           let isDokter = false
-           let data2 = JSON.parse(data)
-           for(let i = 0; i < data2.length; i++) {
-             if(data2[i].position === 'dokter' && data2[i].isLogin === true) {
-               isDokter = true
-             }
-           }
-           if(isDokter) {
-             Employee.readPatientFile(function(err, data) {
-               if(err) {
-                 callback(err)
-               } else {
-                 let newData = JSON.parse(data)
-                 let diagnosis = input.slice(1).join('')
-                 let newPatient= new Patient(newData.length+1, input[0], diagnosis)
-                 newData.push(newPatient)
-
-                 Employee.writePatientFile(newData, function(err) {
-                   if(err) {
-                     callback(err)
-                   } else {
-                     callback (null)
-                   }
-                 })
-               }
-             })
-           } else {
-             callback('hanya bisa di akses dokter')
-           }
-         }
-       })
     }
 }
 

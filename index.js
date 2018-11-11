@@ -11,4 +11,5 @@ switch (command){
     case 'login' : Controller.login(input); break;
     case 'logout' : Controller.logout(input); break;
     case 'addPatient' : Controller.addPatient(input); break;
+    case 'patientStatus' : Controller.patientStatus(input); break;
 }

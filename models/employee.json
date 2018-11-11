@@ -26,5 +26,19 @@
         "username": "jokertampan",
         "password": "6969",
         "isLogin": false
+    },
+    {
+        "name": "pepen",
+        "position": "satpam",
+        "username": "pepengila",
+        "password": "1122",
+        "isLogin": false
+    },
+    {
+        "name": "pepen",
+        "position": "satpam",
+        "username": "pepengila",
+        "password": "1122",
+        "isLogin": false
     }
 ]
