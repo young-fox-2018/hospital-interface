@@ -1,0 +1,23 @@
+[
+  {
+    "name": "budi",
+    "position": "dokter",
+    "username": "budi",
+    "password": "123456",
+    "loggedIn": false
+  },
+  {
+    "name": "angga",
+    "position": "admin",
+    "username": "angga",
+    "password": "54321",
+    "loggedIn": false
+  },
+  {
+    "name": "Arnold",
+    "position": "dokter",
+    "username": "Arnold",
+    "password": "999888",
+    "loggedIn": false
+  }
+]

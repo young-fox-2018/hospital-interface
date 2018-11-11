@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "daniel",
+    "diagnosis": [
+      "batuk",
+      "flu",
+      "pilek",
+      "demam"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Arnold",
+    "diagnosis": [
+      "stress"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Arnold",
+    "diagnosis": [
+      "gila"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Arnold",
+    "diagnosis": [
+      "gila",
+      "stress",
+      "bingung",
+      "pusing"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Robert",
+    "diagnosis": []
+  },
+  {
+    "id": 6,
+    "name": "Januar",
+    "diagnosis": [
+      "stress",
+      "insomnia"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Abed",
+    "diagnosis": [
+      "linglung"
+    ]
+  }
+]
