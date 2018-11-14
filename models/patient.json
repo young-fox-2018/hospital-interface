@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "sutiyem",
+        "diagnosis": "pucink pala belbi",
+        "statusHealth": "Sick"
+    },
+    {
+        "id": 2,
+        "name": "butet",
+        "diagnosis": "perut bergejolak",
+        "statusHealth": "Healed"
+    },
+    {
+        "id": 3,
+        "name": "tempenyon",
+        "diagnosis": "gegar otak",
+        "statusHealth": "Sick"
+    },
+    {
+        "id": 4,
+        "name": "mastur",
+        "diagnosis": "gagal makan",
+        "statusHealth": "Sick"
+    }
+]
