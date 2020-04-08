@@ -1,0 +1,15 @@
+[
+  {
+    "username": "kobant",
+    "password": "12345",
+    "role": "dokter",
+    "id": 1,
+    "loggedIn": false
+  },
+  {
+    "username": "koggbant",
+    "password": "12345",
+    "role": "dokter",
+    "id": 2
+  }
+]
