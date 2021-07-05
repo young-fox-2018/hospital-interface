@@ -1,16 +1,29 @@
-class Patient {
-  constructor(id, name, diagnosis) {
-    this.id = id
-    this.name = name
-    this.diagnosis = diagnosis
+const fs = require('fs')
+
+class Model {
+
+  static getData(path , cb) {
+    fs.readFile(path,function(err,data){
+      if(err){
+        cb(err)
+      }else {
+        cb(null, JSON.parse(data))
+      }
+    })
   }
+
+  static saveData(path ,data,cb) {
+    fs.writeFile(path , JSON.stringify(data, null,2), function (err){
+      if(err){
+        cb(err)
+      }else {
+        cb(null)
+      }
+    })
+  }
+
+ 
 }
 
-class Employee {
-  constructor(name, position, username, password) {
-    this.name = name
-    this.position = position
-    this.username = username
-    this.password = password
-  }
-}
+
+module.exports = Model
